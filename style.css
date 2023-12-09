@@ -1,0 +1,337 @@
+*
+
+{
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "poppins";
+    scroll-behavior: smooth;
+
+}
+
+h1,h2,h3,h4,h5,h10,button{
+    font-family: "Verdana";
+}
+
+body{
+    overflow-x: hidden; /* rien ne dépassera sur l'axe x */
+    max-width: 1920px;
+}
+
+/*HEADER */
+
+
+header{
+    height: 120px;
+    width: 100%;
+    left:0;
+    top:0;
+    position:absolute; /*pour ne pas tout perturber, le background passe bien en arrière-plan*/
+    background-size: cover;
+    background-position: center;
+}
+
+
+header .container{
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+
+header .container ul{
+    list-style: none;
+    float: right;
+    display: flex; 
+    margin-top: 20px;
+}
+
+header .container ul a{
+    font-size:1.2em;
+    font-weight: 500;
+    margin: 0 30px;
+    color: #31489f;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    transition: 0.6s ease;;
+}
+
+header .container ul a:hover{
+    border-color: #31489f;
+    border: 2px solid;
+    color:#000;
+    border-radius: 30px ;
+}
+
+.img1{
+    width: 4%;
+    position: absolute;
+    top:40px;
+    border-radius: 20px;
+}
+
+.img1:hover{
+    width:10%;
+    border-radius: 30px;
+    transition: 0.6s ease-in-out;;
+}
+
+header .group{
+    font-size: 0.6em;
+    color:#31489f
+}
+
+
+/*SECTION 1 */
+@media (min-width:150px){
+    .section1{
+        height: 100vh; /*taille de l'écran */
+        background-image: url(img_sudoku.png);
+        background-repeat: no-repeat; /*sinon le background se repéte mainte fois à former une mosaïque */
+        background-position:65%;
+    }
+}
+
+.section1 .container{
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto; /*permet de se centrer automatiquement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section1 button{
+    position:relative;
+    height: 70px;
+    width: 250px;
+    border-radius: 50px;
+    border: 3px solid #31489f;
+    background-color: #fff;
+    font-size:1.5em;
+    color: #31489f;
+    z-index:2; /*le z-index permet de passer des objets en background */
+    transition: 0.5s;
+    overflow:hidden; /*masque le superflux du bouton bleu qui normalement sort du cadre du bouton */
+}
+
+.section1 button::before{
+    content:"";
+    position: absolute;
+    height: 70px;
+    width: 250px;
+    border-radius: 50px;
+    background-color: #31489f;
+    top:-2px; /*pour que ce bouton soit pile par dessus l'autre */
+    left:-2px;
+    transform:translate(-100%); /*pour qu'il soit décalé */
+    transition: 0.5s;
+    z-index:-1
+
+}
+
+.section1 button:hover::before{ /* quand on passe la souris sur le bouton */
+    transform: translate(0%); 
+} 
+
+.section1 button:hover{
+    color: #fff;
+}
+.section1 button i{
+    display:none;
+}
+
+
+.section1 h1{
+    font-size: 8em;
+    margin-bottom: 70px;
+    color:#31489f;
+}
+
+
+
+
+
+/*TRANSITION*/
+.transition {
+    width: 100%;
+    position:absolute;
+    top:87%;
+}
+
+.transition img { /*prend la totalité de la largeur du container qui lui fait la totalité de la largeur de l'écran*/
+    width: 120%;
+}
+
+
+
+    
+/*SECTION 2 */
+
+
+.section2 {
+    background-color: #232323;
+    padding:100px 0;
+}
+
+.section2 .container{
+    max-width: 1500px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 .title{
+    width:100%;
+    color: #fff;
+    font-size:2.5em;
+    margin-bottom: 100px;
+}
+
+
+.section2 .title::before{
+    content:"";
+    position:absolute;
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #66aefc;
+    clip-path: polygon(  /* fait grâce au site clip clippy */
+        0 0,
+        100% 0,
+        100% 80%,
+        80% 35%,
+        64% 100%,
+        48% 35%,
+        31% 100%,
+        16% 35%,
+        0% 80%
+    );
+    top:125%; /* modifier le placement à la fin */
+    left:44%;
+}
+
+.section2 h1{
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+
+
+.section2 .content{
+    color:#fff;
+    font-size: 2.5em;
+}
+
+
+.section2 .titre{
+    display: flex;
+    align-items: center;;
+}
+
+.section2 .separateur1{
+    width: 75px;
+    height: 7px;
+    background-color: #0fbe49;
+    border-radius: 0 50px 50px 0;
+    margin: 25px 0;
+    top:50%;
+}
+
+
+.section2 .separateur2{
+    width: 75px;
+    height: 7px;
+    background-color:#66adfc ;
+    border-radius: 0 50px 50px 0;
+    margin: 25px 0;
+}
+
+.section2 .separateur3{
+    width: 75px;
+    height: 7px;
+    background-color:#a51f72 ;
+    border-radius: 0 50px 50px 0;
+    margin: 25px 0;
+}
+
+
+.section2 p{
+    max-width: 1000px;
+}
+
+.section2 .content-top{
+    margin-top: 150px;
+}
+.section2 .content-middle{
+    margin-top:300px;
+}
+
+.section2 .content-bottom{
+    margin-top:300px;
+}
+
+
+
+.content{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+
+.img3{
+    width:80%;
+}
+
+
+@media screen and (max-width: 1500px) {/* quand on a plusieurs pages ouvertes, permet de garder une visualisation plutôt complète de la page*/
+    .transition{
+        display: none;
+    }
+    .section2 .content-top {
+        flex-direction: column;
+    }
+    .section2 .content-middle{
+        flex-direction: column-reverse; /* sinon 2 images seront à la suite sans le texte associé. Car pour content-top on a l'image qui est dans le right, et pour content-middle on a l'image dans le left */
+    }
+    .section2 .content-bottom {
+        flex-direction: column;
+    }
+    .section2 .container{
+        width: 100%;
+    }
+    .section2 p {
+        max-width: 900px;
+    }
+    .section2 .title{
+        text-align: center;
+    }
+    .section2 .title::before{
+        visibility: hidden;
+    }
+   
+}
+
+
+   
+    
+
+
+
+
+
+
+
